@@ -13,5 +13,5 @@ sumsq x | x > 0 = sum (map square [1..x])
 
 -- 3
 fact :: Integer -> Integer
-fact x | x > 0 = product [1..x]
+fact x | x > 0 = foldl 1 [1..x]
        | otherwise = error "integer must be positive"
