@@ -13,5 +13,10 @@ sumsq x | x > 0 = sum (map square [1..x])
 
 -- 3
 fact :: Integer -> Integer
-fact x | x > 0 = foldl 1 [1..x]
+fact x | x > 0 = foldl (*) 1 [1..x]
        | otherwise = error "integer must be positive"
+
+--4
+--comb :: Integer -> Integer -> Fractional
+comb n m | n < m = error "n cannot be less than m"
+         | otherwise = div (fact n) ((fact m) * (fact (n-m)))
