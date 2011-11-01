@@ -88,9 +88,19 @@ rev2 (x:xs) | length (x:xs) == 2 = (xs !! 0) : [x]
 
 -- 13
 position :: Int -> [Int] -> Int
-position i xs = phelp i xs 
+position i xs = phelp i 1 xs
 
-phelp :: Int -> [Int] -> Int
-phelp ct [] = 0
-phelp ct (x:xs) | ct == 1 = x
-                | otherwise = phelp (ct - 1) xs
+phelp :: Int -> Int -> [Int] -> Int
+phelp i ct [] = 0
+phelp i ct (x:xs) | i == x = ct
+                  | otherwise = phelp i (ct + 1) xs
+
+-- 14
+element :: Int -> [Int] -> Int
+element i xs = ehelp i xs 
+
+ehelp :: Int -> [Int] -> Int
+ehelp ct [] = 0
+ehelp ct (x:xs) | ct == 1 = x
+                | otherwise = ehelp (ct - 1) xs
+
