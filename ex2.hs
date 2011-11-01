@@ -17,3 +17,12 @@ myand (x:xs) = x && myand xs
 
 myand2 :: [Bool] -> Bool
 myand2 x = foldr (&&) True x
+
+-- 3
+concatList :: [[Int]] -> [Int]
+concatList [] = []
+concatList (x:xs) = x ++ concatList xs
+
+-- or
+concatList2 :: [[Int]] -> [Int]
+concatList2 x = foldr (++) [] x
