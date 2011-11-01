@@ -68,3 +68,10 @@ insMult x [] = [x]
 insMult x (y:ys) | x < y = x:y:ys
                  | x == y = x:ys
                  | otherwise = y:ins x ys
+
+-- 9
+memberNum :: [Int] -> Int -> Int
+memberNum xs x | xs == [] = 0
+               | otherwise = length (filter (\y -> y == x) xs)
+
+-- 10 
