@@ -50,3 +50,7 @@ divisors x = filter (\y -> mod x y == 0) [1..(div x 2)]
 -- 9
 abundant :: Integer -> Bool
 abundant x = (foldr (+) 0 (divisors x)) > x
+
+-- 10
+amicable :: Integer -> Integer -> Bool
+amicable x y = (foldr (+) 0 (divisors y)) == x && (foldr (+) 0 (divisors x)) == y
