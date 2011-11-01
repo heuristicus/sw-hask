@@ -81,3 +81,7 @@ member xs x = (memberNum xs x) >= 1
 -- 11
 member2 :: [Int] -> Int -> Bool
 member2 xs x = length (filter (\y -> y == x) xs) /= 0
+
+-- 12
+rev2 (x:xs) | length (x:xs) == 2 = (xs !! 0) : [x]
+            | otherwise = (x:xs)
