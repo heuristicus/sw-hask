@@ -26,3 +26,25 @@ concatList (x:xs) = x ++ concatList xs
 -- or
 concatList2 :: [[Int]] -> [Int]
 concatList2 x = foldr (++) [] x
+
+-- 4
+--while pred [x] = pred x ? ([x], False)
+--while pred (x:xs) = 
+
+-- 5
+iSort :: [Int] -> [Int]
+iSort [] = []
+iSort (x:xs) = ins x (iSort xs)
+
+ins :: Int -> [Int] -> [Int]
+ins x [] = [x]
+ins x (y:ys) | x <= y = x:y:ys
+             | otherwise = y:ins x ys
+
+minList :: [Int] -> Int
+minList x = head (iSort x)
+
+maxList :: [Int] -> Int
+maxList x = last (iSort x
+
+-- 6
