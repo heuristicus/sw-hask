@@ -39,3 +39,14 @@ perfect x = (foldr (+) 0 (divisors x)) == x
 
 divisors :: Integer -> [Integer]
 divisors x = filter (\y -> mod x y == 0) [1..(div x 2)]
+
+-- 8
+-- No idea.
+--coins = [1,2,5,10,20,50,100,200]
+--countways :: Integer -> Integer -> Integer
+--countways n m | n < 1 || m < 1 = error "unaccepted input"
+--              | otherwise = 
+
+-- 9
+abundant :: Integer -> Bool
+abundant x = (foldr (+) 0 (divisors x)) > x
