@@ -74,4 +74,6 @@ memberNum :: [Int] -> Int -> Int
 memberNum xs x | xs == [] = 0
                | otherwise = length (filter (\y -> y == x) xs)
 
--- 10 
+-- 10
+member :: [Int] -> Int -> Bool
+member xs x = (memberNum xs x) >= 1
