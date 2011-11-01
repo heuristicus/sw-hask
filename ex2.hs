@@ -85,3 +85,12 @@ member2 xs x = length (filter (\y -> y == x) xs) /= 0
 -- 12
 rev2 (x:xs) | length (x:xs) == 2 = (xs !! 0) : [x]
             | otherwise = (x:xs)
+
+-- 13
+position :: Int -> [Int] -> Int
+position i xs = phelp i xs 
+
+phelp :: Int -> [Int] -> Int
+phelp ct [] = 0
+phelp ct (x:xs) | ct == 1 = x
+                | otherwise = phelp (ct - 1) xs
