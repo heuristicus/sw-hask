@@ -16,7 +16,13 @@ fact :: Integer -> Integer
 fact x | x > 0 = foldl (*) 1 [1..x]
        | otherwise = error "integer must be positive"
 
---4
+-- 4
 --comb :: Integer -> Integer -> Fractional
 comb n m | n < m = error "n cannot be less than m"
          | otherwise = div (fact n) ((fact m) * (fact (n-m)))
+
+-- 5
+mygcd :: Integer -> Integer -> Integer
+mygcd 0 0 = error "Both numbers cannot be zero"
+mygcd n 0 = n
+mygcd n m = mygcd m (mod n m)
