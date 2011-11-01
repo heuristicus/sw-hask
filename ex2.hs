@@ -104,3 +104,21 @@ ehelp ct [] = 0
 ehelp ct (x:xs) | ct == 1 = x
                 | otherwise = ehelp (ct - 1) xs
 
+-- 15
+--segments :: [a] -> [[a]]
+--segments [x] = [[x]]
+--segments (x:xs) = 0
+
+-- 16
+--parts :: Int -> [[Int]]
+--parts i | i == 0 = 0
+--        | otherwise = []
+
+ones i = ohp i []
+
+ohp i ls | (length ls) /= i = ohp i (1:ls)
+         | otherwise = ls
+
+-- 17
+
+
