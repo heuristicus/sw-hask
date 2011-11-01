@@ -54,3 +54,10 @@ abundant x = (foldr (+) 0 (divisors x)) > x
 -- 10
 amicable :: Integer -> Integer -> Bool
 amicable x y = (foldr (+) 0 (divisors y)) == x && (foldr (+) 0 (divisors x)) == y
+
+-- 11
+lcm3 :: Integer -> Integer -> Integer -> Integer
+lcm3 x y z = mylcm x (mylcm y z)
+
+mylcm :: Integer -> Integer -> Integer
+mylcm x y = div (abs (x * y)) (gcd x y)
