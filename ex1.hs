@@ -26,3 +26,16 @@ mygcd :: Integer -> Integer -> Integer
 mygcd 0 0 = error "Both numbers cannot be zero"
 mygcd n 0 = n
 mygcd n m = mygcd m (mod n m)
+
+-- 6
+--prime :: Integer -> Bool
+--prime 1 = True
+--prime x | x < 1 = error "no negatives or zero"
+--        | otherwise =  map (mygcd x xs) [1..x]
+
+-- 7
+perfect :: Integer -> Bool
+perfect x = (foldr (+) 0 (divisors x)) == x
+
+divisors :: Integer -> [Integer]
+divisors x = filter (\y -> mod x y == 0) [1..(div x 2)]
