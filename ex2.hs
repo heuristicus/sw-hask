@@ -1,3 +1,4 @@
+import Data.List
 -- 1
 productList :: [Int] -> Int
 productList [] = 1
@@ -34,7 +35,7 @@ concatList2 x = foldr (++) [] x
 -- 5
 iSort :: [Int] -> [Int]
 iSort [] = []
-iSort (x:xs) = ins x (iSort xs)
+iSort (x:xs) = insDesc x (iSort xs)
 
 ins :: Int -> [Int] -> [Int]
 ins x [] = [x]
@@ -45,6 +46,25 @@ minList :: [Int] -> Int
 minList x = head (iSort x)
 
 maxList :: [Int] -> Int
-maxList x = last (iSort x
+maxList x = last (iSort x)
 
 -- 6
+minList2 :: [Int] -> Int
+minList2 [] = 0
+minList2 [x] = x
+minList2 (x:xs) = minList2 (filter (<x) xs)
+
+--maxList2 :: [Int] -> Int
+
+-- 7
+insDesc :: Int -> [Int] -> [Int]
+insDesc x [] = [x]
+insDesc x (y:ys) | x >= y = x:y:ys
+                 | otherwise = y:insDesc x ys
+
+-- 8
+insMult :: Int -> [Int] -> [Int]
+insMult x [] = [x]
+insMult x (y:ys) | x < y = x:y:ys
+                 | x == y = x:ys
+                 | otherwise = y:ins x ys
